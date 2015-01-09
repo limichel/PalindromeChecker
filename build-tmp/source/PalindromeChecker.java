@@ -32,7 +32,27 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  
+  String backward = "";
+  String forward = "";
+  for(int i = word.length()-1; i >= 0; i--)
+  {
+  	if(Character.isLetter(word.charAt(i)) == true)
+  	{
+  	  backward = backward + word.substring(i, i+1).toLowerCase();
+  	}
+  }
+  for(int i = 0; i < word.length(); i++)
+  {
+  	if(Character.isLetter(word.charAt(i)) == true)
+  	{
+  	  forward = forward + word.substring(i, i+1).toLowerCase();
+  	}
+  }
+  if(backward.equals(forward))
+  {
+	return true;
+  }
   return false;
 }
 
